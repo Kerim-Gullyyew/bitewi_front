@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-color: #001732;
+  padding: 1rem;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .nav {
+    @apply relative text-sm cursor-pointer ml-10 text-[#EFE1D1] font-bold tracking-[1px] hover:text-white
+  }
+
+  .nav::after {
+    @apply content-[''] absolute bg-[#D4ADFC] h-[1px] w-[0%] right-0 -bottom-[5px] rounded-xl duration-300
+  }
+
+  .nav:hover::after {
+    @apply w-[100%]
+  }
+
+  .custom-swiper {
+    position: relative;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+
+
+
+  .swiper-border {
+    position: relative;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+
+  .custom-swiper::before,
+  .custom-swiper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    /* Adjust the width of the gradient effect */
+    z-index: 2;
+    pointer-events: none;
+    /* Allows clicks to pass through */
+  }
+
+  .custom-swiper::before {
+    left: 0;
+  }
+
+  .custom-swiper::after {
+    right: 0;
+  }
+
+  .custom-gradient {
+    background: linear-gradient(to bottom, #fa39ad 40%, #fa6c4c 50%);
+  }
+
+  nav .animation {
+    position: absolute;
+    height: 100%;
+    /* height: 5px; */
+    top: 0;
+    /* bottom: 0; */
+    z-index: 0;
+    background: #1abc9c;
+    border-radius: 8px;
+    transition: all .5s ease 0s;
+  }
+
+  .servicecontainer {
+    position: relative;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(180deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent);
+    mask: linear-gradient( transparent, white 0%, white 60%, transparent);
+  }
+
+
+  .custom-phone-input {
+    padding: 1rem; /* Padding around the container */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+
+}
